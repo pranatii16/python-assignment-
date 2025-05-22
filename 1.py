@@ -1,0 +1,22 @@
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+def generate_primes(start, end):
+    primes = []
+    for num in range(start, end + 1):
+        if is_prime(num):
+            primes.append(num)
+    return primes
+
+
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
+
+prime_list = generate_primes(start, end)
+print(f"Prime numbers between {start} and {end} are:")
+print(prime_list)
